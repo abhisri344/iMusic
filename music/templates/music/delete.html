@@ -1,0 +1,25 @@
+{% extends 'music/master1.html' %}
+{% block title %}
+Delete
+{% endblock  %}
+{% block body %}
+<style>
+.container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+}
+</style>
+<div class="container">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<img src="{{object.image.url}}" height="200px" width="300px">
+<h2>{{object.title}}</h2>
+<p>
+    <h3>Process to Delete</h3>
+    <input type="submit" value="Yes" class="btn btn-primary">
+    <a href="{% url 'music:index' %}"class="btn btn-primary">No</a>
+</p>
+</div>
+{% endblock  %}

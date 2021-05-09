@@ -1,0 +1,65 @@
+{% extends master %}
+
+{% block title %}
+{{val.title}}
+{% endblock  %}
+{% block body %}
+<style>
+.container {
+    margin:1% 2%;
+}
+p{
+  color: white;
+}
+</style>
+<div class="container">
+<div class="media">
+  <div class="media-left media-middle">
+      <img class="media-object" src="{{val.image.url}}" height='200px' width='300px' alt="...">
+  </div>
+  <div class="container mt-0">
+  {% if user.is_authenticated %}
+    <a href="{% url 'music:addsong' val.pk %}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;AddSong</span></a>
+  {% endif %}
+  </div>
+</div>
+<div class="media-body">
+{% comment %} {{val}} {% endcomment %}
+{% if val %}
+
+<table style="background-image: white;" class="table mt-3">
+<tr >
+<th><p>Song Title</p></th>
+<th>Artist</th>
+<th>Genre</th>
+<th>Logo</th>
+<th>Action</th>
+{% if user.is_authenticated %}
+<th>Update</th>
+<th>Delete</th>
+{% endif %}
+</tr>
+{% for i in val.song_set.all %}
+{% comment %} {{i.al_id}} {% endcomment %}
+<tr>
+
+<td style="color: white;">{{i.title}}</td>
+<td style="color: white;">{{i.artist}}</td>
+<td style="color: white;">{{i.genre}}</td>
+<td style="color: white;"><img src="{{i.image.url}} "height='50px' width='100px'></td>
+<td style="color: white;"><audio src="{{i.sfile.url}}"controls="controls"></audio></td>
+{% if user.is_authenticated %}
+<td><a href="{% url 'music:updatesong' i.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+<td><a href="{% url 'music:deletesong' i.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<h1>No songs in the album</h1>
+{% endif %}
+
+</div>
+</div>
+
+{% endblock  %}

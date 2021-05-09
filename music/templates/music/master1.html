@@ -1,0 +1,95 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <title>{% block title %}
+    {% endblock title %}</title>
+  </head>
+  <body>
+  <style type="text/css">
+body {
+    background-image:  url(../../static/music/bg2.png);
+    /* {% comment %} height:; {% endcomment %} */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /* {% comment %} background-position:relative; {% endcomment %} */
+}
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
+}
+.content {
+  padding: 16px;
+}
+</style>
+  
+    <nav class="navbar fixed-nav-bar navbar-inverse"id="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'music:home' %}">iMusic</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'music:home' %}">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'music:index' %}">Albums</a></li>
+        <li><a href="{% url 'music:allsongs' %}">Songs</a></li>
+        <li><a href="{% url 'music:addalbum' %}">AddAlbum</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-left"action="/search1" role="search1">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search Song" name="search1" id="search1">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <form class="navbar-form navbar-left "action="/search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search Album"name="search" id="search">
+        </div>
+        <button type="submit" class="btn btn-default" >Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'music:signout' %}">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br><br><br>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  {% block body %}
+  {% endblock body %}
+  </body>
+</html>

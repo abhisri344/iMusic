@@ -1,0 +1,25 @@
+{% extends 'music/master.html' %}
+{% block title %}
+Login
+{% endblock  %}
+{% block body %}
+<style>
+.container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+    color: white;
+    justify-content: center;
+    font-size: larger;
+}
+</style>
+<div class="parent-div">
+<div class="container">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Login"  style="color: black; font-weight: 1000;" class="btn btn-info">
+</div>
+</div>
+{% endblock  %}

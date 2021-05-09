@@ -1,0 +1,39 @@
+{% extends 'music/master.html' %}
+{% block title %}
+Album 
+{% endblock  %}
+{% load ratings %}
+{% block body %}
+{% load static %}
+<style>
+img{
+  width:300px;
+  height:200px;
+  
+}
+/* body{ */
+  /* background-image: url(../../static/music/bg2.); */
+/* } */
+</style>
+<div class="container">
+
+{% for item in album %}
+<div class="row">
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{item.image.url}}" alt="...">
+      <div class="caption">
+        <h3>{{item.title}}</h3>
+        <p><font size=2px>{{item.artist}},{{item.genre}},{{item.year}}</font></p>
+        {% ratings item %}
+        <p><a href="{% url 'music:detail' item.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></a> </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+  
+
+</div>
+{% endblock  %}

@@ -1,0 +1,43 @@
+{% extends 'music/master1.html' %}
+{% block title %}
+Songs
+{% endblock  %}
+{% block body %}
+<div class="media-body">
+{% comment %} {{val}} {% endcomment %}
+{% if val %}
+
+<table class="table mt-3">
+<tr>
+<th>Song Title</th>
+<th>Artist</th>
+<th>Genre</th>
+<th>Logo</th>
+<th>Action</th>
+{% if user.is_authenticated %}
+<th>Update</th>
+<th>Delete</th>
+{% endif %}
+</tr>
+{% for i in val %}
+{% comment %} {{i.al_id}} {% endcomment %}
+<tr>
+
+<td>{{i.title}}</td>
+<td>{{i.artist}}</td>
+<td>{{i.genre}}</td>
+<td><img src="{{i.image.url}} "height='50px' width='100px'></td>
+<td><audio src="{{i.sfile.url}}"controls="controls"></audio></td>
+{% if user.is_authenticated %}
+<td><a href="{% url 'music:updatesong' i.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+<td><a href="{% url 'music:deletesong' i.id %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<h1>No songs in the album</h1>
+{% endif %}
+
+</div>
+{% endblock  %}

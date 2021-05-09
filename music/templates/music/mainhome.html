@@ -1,0 +1,341 @@
+{% extends 'music/master.html' %}
+{% block title %}
+Home: iMusic
+{% endblock %}
+
+{% block body %}
+
+<html>
+<title>iMusic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-flickr"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+</div>
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+        <h1 class="w3-xxxlarge"><b>iMusic</b></h1>
+        <h6>Welcome to the World of Music : <span class="w3-tag">iMusic</span></h6>
+    </header>
+
+    <!-- Image header -->
+    <header class="w3-display-container w3-wide" id="home">
+        <img class="w3-image" src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_860462652_396419.jpg"
+             alt="iMusic" width="1600" height="1060">
+        <div class="w3-display-left w3-padding-large">
+            <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>iMusic</b></h1>
+            <h6>
+
+                <button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
+                        onclick="window.location.href='{%url 'music:index'%} ' ">Albums
+                </button>
+                <button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
+                        onclick="window.location.href='{%url 'music:signup'%} ' ">Signup
+                </button>
+
+            </h6>
+        </div>
+    </header>
+
+    <!-- Grid -->
+    <div class="w3-row w3-padding w3-border">
+
+        <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+
+            <!-- Blog entry -->
+            <div class="w3-container w3-white w3-margin w3-padding-large">
+                <div class="w3-center">
+                    <h3>iMusic</h3>
+                    <h5>Your home for the latest Trending Music<span class="w3-opacity"></span></h5>
+                </div>
+
+                <div class="w3-justify">
+                    <img src="https://ak.picdn.net/assets/cms/music_subscription_homepage_banner.jpg" alt="iMusic"
+                         style="width:100%" class="w3-padding-16">
+                    <p><strong>iMusic</strong> We provide all the latest songs in the Industry </p>
+                    <p>iMusic is a music and podcast streaming service and online music locker operated by Us, part of
+                        its iMusic Play line of services. The service was announced on August, 05, 2020; after a
+                        three-day, invitation-only beta period, it was publicly launched on August,10,2020.</p>
+                    <p class="w3-left">
+                        <button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i
+                                class="fa fa-thumbs-up"></i> Like</b></button>
+                    </p>
+                    <p class="w3-clear"></p>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Blog entry -->
+            <div class="w3-container w3-white w3-margin w3-padding-large">
+                <div class="w3-center">
+                    <h3>All Music</h3>
+                    <h5>Ed Sheeran <span class="w3-opacity">August, 07, 2020</span></h5>
+                </div>
+
+                <div class="w3-justify">
+                    <img src="https://guitaraffinity.com/wp-content/uploads/2018/11/ed-sheeran-guitar.jpg"
+                         alt="Ed Sheeran" style="width:100%" class="w3-padding-16">
+                    <p><strong>New York </strong> The trend this summer about music is all over the World!!!</p>
+                    <p>I think the trick with music videos is not seeing it to promote the song, I think if you see
+                        music videos as a separate art form, and you have a song which is a work of art, and you have a
+                        video, and instead of just making a video that just kind of complements the song, you should
+                        make a different thing that kind of stands out in its own, so if you turn the music off it will
+                        still be interesting, That’s how I try to work videos.<br>
+                        <br>
+                        I haven’t really had a stable life, fixed address or stable kind of job since I started, which
+                        is around 16. So the success that I’ve had… I’m still doing the same thing that I was doing when
+                        I was 16, I am still playing music and doing gigs, so I just get to travel the world and get
+                        paid for it, so it’s not different to be honest.
+                        <br>
+                        <br>
+                        My projects now... I am pushing my debut album in America at the moment, it comes out in June;
+                        and I have got my first single “The A Team”, which is out there and yet just walking out on
+                        radios; so that’s the main projects I am focusing on.<br>
+                    </p>
+                    <p class="w3-left">
+                        <button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i
+                                class="fa fa-thumbs-up"></i> Like</b></button>
+                    </p>
+                    <p class="w3-clear"></p>
+                </div>
+            </div>
+
+            <!-- Blog entry -->
+            <div class="w3-container w3-white w3-margin w3-padding-large">
+                <div class="w3-center">
+                    <h3>Albums of the Decade</h3>
+                    <h5>Film Albums<span class="w3-opacity">August, 05, 2020</span></h5>
+                </div>
+
+                <div class="w3-justify">
+                    <img src="https://www.filmcompanion.in/wp-content/uploads/2019/12/Film-Companion-Best-Album-of-the-decade-Lead-image-1.jpg"
+                         alt="Album" style="width:100%" class="w3-padding-16">
+                    <p><strong>Mumbai</strong> The 3 Best Hindi Film Albums of the Decade </p>
+                    <p>An album is larger than the sum of its parts. A Hindi film album even more so, where the visceral
+                        nature of music meets the visuals, glamour and format of Hindi cinema. The hero’s face. The
+                        singer’s association with the hero’s face. A musical narrative all its own. It’s different from
+                        non-film music. The director’s contribution to a good album is sometimes almost as important as
+                        the composer and the lyricist. It is about imagining how a song will be picturised in a film,
+                        before it has released; and after you have seen it it is about lingering in its afterglow.
+                        <br><br>
+                        1. Gangs of Wasseypur (2012) <br>
+                        Composer: Sneha Khanwalkar<br>
+                        Lyrics: Varun Grover
+                        <br><br>
+                        2. Guzaarish (2011)<br>
+                        Composer: Sanjay Leela Bhansali<br>
+                        Lyricist: Turaz, Vibhu Puri
+                        <br><br>
+                        3. Delhi Belly (2011)<br>
+                        Composer: Ram Sampath<br>
+                        Lyricist: Amitabh Bhattacharya, Munna Dhiman, Akshat Verma
+
+                        <br><br>
+                    </p>
+                    <p class="w3-left">
+                        <button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i
+                                class="fa fa-thumbs-up"></i> Like</b></button>
+                    </p>
+                    <p class="w3-clear"></p>
+                </div>
+            </div>
+
+            <!-- END BLOG ENTRIES -->
+        </div>
+
+        <!-- About/Information menu -->
+        <div class="w3-col l4">
+            <!-- About Card -->
+            <div class="w3-white w3-margin">
+                <img src="https://images.macrumors.com/t/MKlRm9rIBpfcGnjTpf6ZxgpFTUg=/1600x1200/smart/article-new/2018/05/apple-music-note.jpg"
+                     alt="Music" style="width:100%" class="w3-grayscale">
+                <div class="w3-container w3-black">
+                    <h4>iMusic</h4>
+                    <p>iMusic is a music and video streaming service developed by iMusic Inc. Users select music to
+                        stream to their device on-demand, or they can listen to existing, curated playlists. The service
+                        also includes the Internet radio station Beats 1, which broadcasts live to over 160 countries 24
+                        hours a day.</p>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Posts -->
+            <div class="w3-white w3-margin">
+                <div class="w3-container w3-padding w3-black">
+                    <h4>Popular Songs</h4>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    <li class="w3-padding-16">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Charlie_Puth_-_Girlfriend.png"
+                             alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                        <span class="w3-large">Girlfriend</span>
+                        <br>
+                        <span>Artist: Charlie Puth </span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://www.easterneye.biz/wp-content/uploads/2020/06/DilBechara.jpg" alt="Image"
+                             class="w3-left w3-margin-right" style="width:50px">
+                        <span class="w3-large">Dil Bechara</span>
+                        <br>
+                        <span>Artist: A.R. Rehman</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://m.media-amazon.com/images/I/81MOPq41MeL._SS500_.jpg" alt="Image"
+                             class="w3-left w3-margin-right" style="width:50px">
+                        <span class="w3-large">Nobody's Love</span>
+                        <br>
+                        <span>Artist: Maroon-5</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://i1.sndcdn.com/artworks-000033886959-xniimk-t500x500.jpg" alt="Image"
+                             class="w3-left w3-margin-right w3-sepia" style="width:50px">
+                        <span class="w3-large">One Thousand Years</span>
+                        <br>
+                        <span>Artist: Christina Perri</span>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+
+            <!-- Advertising -->
+            <div class="w3-white w3-margin">
+                <div class="w3-container w3-padding w3-black">
+                    <h4>Advertise</h4>
+                </div>
+                <div class="w3-container w3-white">
+                    <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+                        <span class="w3-display-middle">Your AD Here</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Tags -->
+            <div class="w3-white w3-margin">
+                <div class="w3-container w3-padding w3-black">
+                    <h4>Tags</h4>
+                </div>
+                <div class="w3-container w3-white">
+                    <p>
+                        <span class="w3-tag w3-black w3-margin-bottom">Music</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Bollywood</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hindi RAP</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Twilight</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hollywood</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Selmon Bhoi</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">iMusic</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Guitar</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Pop</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Arijit</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">English</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Rock</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">90's</span> <span
+                            class="w3-tag w3-light-grey w3-small w3-margin-bottom">Romance</span>
+                    </p>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Inspiration -->
+            <hr>
+
+            <div class="w3-white w3-margin">
+                <div class="w3-container w3-padding w3-black">
+                    <h4>Follow Us</h4>
+                </div>
+                <div class="w3-container w3-xlarge w3-padding">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Subscribe -->
+            <div class="w3-white w3-margin">
+                <div class="w3-container w3-padding w3-black">
+                    <h4>Join us</h4>
+                </div>
+                <div class="w3-container w3-white">
+                    <p>Login/Signup to enjoy Music</p>
+                    <p>
+                        <button type="button" onclick="window.location.href='{%url 'music:login'%} ' "
+                                class="w3-button w3-block w3-red">Login
+                        </button>
+                    </p>
+                    <p>
+                        <button type="button" onclick="window.location.href='{%url 'music:signup'%} ' "
+                                class="w3-button w3-block w3-red">Signup
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <!-- END About/Intro Menu -->
+        </div>
+
+        <!-- END GRID -->
+    </div>
+
+    <!-- END w3-content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+    <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i
+            class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <h2>iMusic</h2>
+    <p>All your music at one place</p>
+</footer>
+
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
+
+</script>
+
+</body>
+</html>
+
+
+{%endblock%}
